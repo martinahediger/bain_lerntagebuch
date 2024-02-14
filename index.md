@@ -1,7 +1,5 @@
 ---
-title: Lerntagebuch
+title: Lerntagebuch 
 ---
 
-## Willkommen zu meinem Lerntagebuch
-
-Ich freue mich, dass Du da bist. Ich schreibe hier über meine Erfahrungen im Kurs **Bibliotheks- und Archivinformatik**.
+In diesem Lerntagebuch teile ich meine Erfahrungen im Kurs **Bibliotheks- und Archivinformatik**.
