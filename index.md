@@ -2,4 +2,4 @@
 title: Lerntagebuch 
 ---
 
-In diesem Lerntagebuch teile ich meine Erfahrungen im Kurs **Bibliotheks- und Archivinformatik**.
+In diesem Lerntagebuch teile ich meine Erfahrungen vom Kurs **Bibliotheks- und Archivinformatik**.
