@@ -3,4 +3,4 @@ author: Martina Zwick
 description: Lerntagebuch über Bibliotheks- und Archivinformatik 2024
 
 show_excerpts: true # set to false to remove excerpts on the homepage
-theme: minimal
+theme: jekyll-theme-cayman
