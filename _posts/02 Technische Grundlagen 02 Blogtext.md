@@ -1,0 +1,21 @@
+Im zweiten Unterrichtsblock betrachteten wir weitere technische Grundlagen. Da wir im Kurs mit dem Terminal auf der virtuellen Maschine arbeiten werden, wurden die grundlegenden Befehle der Unix Shell geübt. Obschon wir die Befehle für die Shell bereits im Modul ARIS gelernt hatten, war die Repetition für mich sehr hilfreich, weil dieses Modul doch schon länger zurückliegt. Wir nutzten für die Repetition die Übungen der Kapitel zwei, drei und fünf auf der Plattform "Library Carpentry". https://librarycarpentry.org/lc-shell/
+
+Diese Website kannte ich bisher nicht. Sie wird von Freiwilligen betrieben und richtet sich an Personen aus den Informationswissenschaften und Bibliotheken, welche ihre Kenntnisse zu Software und Daten verbessern möchten [@Library]. Die zur Verfügung stehenden Lektionen sind gut aufbereitet und für mich gut verständlich. Besonders hilfreich sind die vielen Übungen. 
+Mit den erwähnten Kapiteln über die Unix Shell konnte ich folgende Kenntnisse wieder auffrischen: Über die Shell im Filesystem zu navigieren. Dabei sind die wichtigsten Befehle (cd, ls, pwd) [@Baker2019LibraryCarpentry]. Bei Kapitel drei ging es darum, mit Dateien zu arbeiten. Die wichtigsten Befehle dabei waren (cp, mv, mkdir). Neu war für mich, dass die in der Session verwendeten Befehle mit dem Befehl history abgerufen werden können. Sie können in einer Datei gespeichert werden mit "history > datei.txt". Dabei werden alle verwendeten Befehle fortlaufend nummeriert aufgelistet. Ein Befehl kann wiederholt werden, in dem die Zeilennummer des Befehls mit einem Ausrufezeichen eingegeben wird (Bsp. !39 gab in meinem Fall den Befehl cd .. aus.). Beim Kapitel 5 fand ich besonders hilfreich zu lernen, dass in der Shell Wildcards verwendet werden können. Mit 
+```
+*.tsv
+```
+
+werden alle Dateien im Ordner mit der Dateiendung .tsv angesprochen. Ausserdem können Shell-Befehle kombiniert werden. (> speichert den Output eines Befehls in einer Datei. Dabei werden die Inhalte in der Datei überschrieben). >> fügt den Output bei der Datei hinzu. Mit der Pipe | können mehrere Befehle aneinander gereiht werden. Beispielsweise eine Ausgabe zu sortieren. Besonders hilfreich fand ich die Grafik: ![[Pasted image 20240226141753.png]]
+Zudem repetierten wir den Befehl grep, mit dem nach Wörtern gesucht werden kann. Um den Funktionsumfang eines Programms aufzurufen kann ich das Programm mit dem Befehl --help kombinieren. Zum Beispiel: wc --help [@Baker2019LibraryCarpentry].
+
+Ein weiterer für mich neuer Bestandteil der Lehreinheit waren die Infos zu Git und GitHub. Ich lernte, dass GitHub auf dem Programm Git basiert. Git ist ein Open Source Programm für die Versionskontrolle von Softwarecode und Dokumenten. Es kann für die Versionierung genutzt werden und ist somit praktisch für die kollaborative Zusammenarbeit an einem File. Das Programm ermöglicht die Nachvollziehbarkeit und die Kontrolle über Veränderung an Dokumenten. Die Verwendung von Git erfolgt lokal auf der eigenen Maschine und wird über die Kommandozeile verwendet. GitHub ist eine Website, welche das Hosting und Teilen von Git Repositories ermöglicht. Auf GitHub finden sich viele Open Source Projekte, welche für eigene Projekte nachgenutzt werden können [@Erdmann2019LibraryCarpentry]. GitHub hat auch die Funktion GitHub Pages, welche wir für das Hosting des Lerntagebuches verwenden. 
+
+Quellen: 
+
+Baker, J., Erdmann, C., Dennis, T., Heggø, D. M., Leinweber, K., Hugolio et al. (2019, Juli). LibraryCarpentry/lc-shell: Library Carpentry: Introduction to the Shell for librarians, June 2019. https://zenodo.org/record/3266085; Zenodo.
+
+Erdmann, C., Leinweber, K., Weaver, B., Baker, J., McGregor, N., Heggø, D. M. O. et al. (2019, Juli). LibraryCarpentry/lc-git: Library Carpentry: Introduction to Git for librarians, June 2019. https://zenodo.org/record/3265772; Zenodo.
+
+Library Carpentry. (n. d.). _Library Carpentry_. https://librarycarpentry.org/index.html.
+
