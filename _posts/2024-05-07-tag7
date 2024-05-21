@@ -1,0 +1,29 @@
+In dieser Lehreinheit haben wir durchgespielt wie Metadaten von Bibliotheks- und Archivsystemen und von Repository-Systemen gesammelt und in ein anderes Datenformat konvertiert werden können. 
+
+Für das Sammeln von Metadaten (auch Harvesting genannt), gibt es drei verschiedene **Schnittstellen** Z39.50, SRU und OAI-PMH. Die Z39.50 und die SRU Schnittstelle sind mir bekannt aus dem Bibliothekswesen. Dort werden die Schnittstellen in der Katalogisierung verwendet. Beispielsweise hatte ich früher bei meiner Arbeit in der Katalogisierung bereits von anderen Bibliotheken hergestellte Titelsätze über die Schnittstelle in das Bibliothekssystem importiert, gemäss des vorliegenden Exemplars überprüft und anhand des lokalen Regelwerks geringfügige Anpassungen vorgenommen. In dem Projekt FRED der Zentralbibliothek Zürich wurden die Schnittstellen Z39.50 und SRU auch für die Datenanreichung bei der Sacherschliessung verwendet [@Bucher2018FRED].   
+
+In der Lehreinheit haben wir die Schnittstelle OAI-PMH verwendet (verlinken zu einem älteren Blogbeitrag?), bei welcher die Anfrage über die Internetadresse gestellt werden kann. Als Tool für das Harvesting haben wir VuFindHarvest genutzt. Hierbei handelt es sich um ein Tool aus dem VuFind Projekt. Es eignet sich für die automatisierte Datensammlung über die OAI-PMH Schnittstelle. 
+
+Bei der **Datensammlung** ermöglichen die Datenanbieter den Export der Metadaten in verschiedenen Metadatenformaten. Es empfiehlt sich jedoch, die Daten im originalen Datenformat zu exportieren. Dadurch kann die Konvertierung zum gewünschten Format nach dem Export gezielt durchgeführt und ein unbemerkter Datenverlust verhindert werden. Die Konvertierung von einem Metadatenformat zu einem anderen Format wird auch Crosswalk genannt. 
+
+Für die **Crosswalks** müssen die beiden Metadatenstandards verglichen werden und intellektuell die Entsprechung der Datenfelder des Ausgangsformat zum Zielformat bestimmt werden. Für gängige Standards sind bereits solche Mappings verfügbar und können für die Crosswalks verwendet werden. Für die Konvertierung von einem MARC-Format zu einem Dublin Core Format hat beispielsweise die Library of Congress ein Mapping vorgenommen: https://www.loc.gov/marc/marc2dc.html  
+Hierbei fällt auf, dass mehrere Unterfelder von MARC einem Dublin Core Element entsprechen. Beispielsweise werden die Urheberangaben aus den *100er und 700er* im MARC-Format dem Element *Contributor* im Dublin Core Format zugeordnet. 
+
+Für die Konvertierung der Metadatenformaten kann **XSLT** verwendet werden. Diese Programmiersprache eignet sich für die Konvertierung einer Ausgangsdatei im XML-Format. In Abbildung 1 wird der Konvertierungsprozess mit XSLT dargestellt. Die XML-Eingabe ist die XML-Datei, welche zusammen mit dem XSLT-Code in den XSLT-Prozessor eingelesen wird. Der XSLT-Code legt fest, inwiefern das Ausgangsformat verändert werden soll. Der XSLT-Prozessor wendet den XSLT-Code auf das Ausgangsdokument an und konvertiert die Datei entsprechend.
+
+![Abbildung 1](https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/TempDeXslt015.svg/800px-TempDeXslt015.svg.png)
+Als Verdeutlichung wird ein XSLT-Code für die Konvertierung von einem Dublin Core-Format in ein MARCXML-Format der Library of Congress näher betrachtet ([XSL-Datei der LoC](https://www.loc.gov/standards/marcxml/xslt/DC2MARC21slim.xsl)). Der Code legt für jedes Dublin Core Element fest, in welches MARC-Feld die Daten bei der Ausgabe geschrieben werden sollen. Beim Dublin Core Element *publisher* besagt der Code, dass der Name des Verlags in das MARC-Feld 260, Unterfeld b geschrieben werden soll. Indikatoren werden keine ausgefüllt: 
+
+```
+<xsl:for-each select="dc:publisher">
+
+<datafield tag="260" ind1=" " ind2=" ">
+
+<subfield code="b">
+
+<xsl:value-of select="."/>
+
+</subfield>
+
+</datafield>
+```
